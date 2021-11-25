@@ -16,6 +16,10 @@
 #include "../Entities/Sound.h"
 #include "../Entities/Text.h"
 #include "../Scenes/Scene.h"
+#include "../Factories/Factory.h"
+#include "../Factories/FactoryGameClasico.h"
+#include "../Factories/FactoryGameCartoon.h"
+#include "../Entities/ClasicoPlayer.h"
 
 /**
     * @brief Level Scene
@@ -24,6 +28,8 @@
 class LevelScene : public Scene
 {
 public:
+    Factory* factory;
+
     /**
         * @brief Construct a new Level Scene
         *
@@ -45,6 +51,7 @@ public:
     virtual void update(const unsigned int delta) override;
 
 private:
+    
     // spawn and generation of map objects
     void spawnTextObjects();
     void generateTileMap();

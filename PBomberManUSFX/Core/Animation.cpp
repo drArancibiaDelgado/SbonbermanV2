@@ -60,4 +60,3 @@ void Animation::update(const unsigned int delta)
                         static_cast<int>(entity.positionX), static_cast<int>(entity.positionY));
     }
 }
- //omg

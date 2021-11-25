@@ -9,6 +9,17 @@
 #include "./Scenes/MenuScene.h"
 
 
+GameManager* GameManager::instance = nullptr;
+
+GameManager* GameManager::getInstance(std::string _windowsName, int _width, int _height) {
+
+    if (instance == 0) {
+        instance = new GameManager(_windowsName, _width, _height);
+    }
+
+    return instance;
+}
+
 GameManager::GameManager(const std::string _windowName, const int width, const int height)
     : windowWidth(width), windowHeight(height), windowName(_windowName)
 {

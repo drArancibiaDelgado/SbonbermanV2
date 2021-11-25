@@ -27,6 +27,7 @@ class Square : public Shape {
       cout << "square " << id_ << ": draw" << endl;
     }
 };
+
 class Ellipse : public Shape {
   public:
     void draw() {
@@ -55,6 +56,7 @@ class SimpleShapeFactory : public Factory {
       return new Square;
     }
 };
+
 class RobustShapeFactory : public Factory {
   public:
     Shape* createCurvedInstance()   {

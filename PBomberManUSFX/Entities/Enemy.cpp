@@ -58,7 +58,7 @@ bool Enemy::isMovingToCell() const
 
 bool Enemy::canAttack() const
 {
-    return aiType == AIType::Chasing;
+    return aiType == AIType::chasing;
 }
 
 int Enemy::getAttackRadius() const

@@ -3,6 +3,8 @@
 
 #include <SDL.h>
 #include <memory>
+#include <iostream>
+#include <string>
 
 #include "./Managers/AssetManager.h"
 #include "./Managers/SceneManager.h"
@@ -26,9 +28,13 @@ class GameManager
 
     bool isRunning = false;  // game loop status
     Uint32 lastTickTime = 0; // last time for delta calculation
+    GameManager(const std::string windowName, const int windowWidth, const int windowHeight);
 
 public:
+    static GameManager* instance;
     KeyboardInput* keyboardInput;
+
+    static GameManager* getInstance(std::string _windowsName, int _width, int _height);
     /**
         * @brief Create GameManager
         *
@@ -36,7 +42,7 @@ public:
         * @param windowWidth - width of window
         * @param windowHeight - height of window
         */
-    GameManager(const std::string windowName, const int windowWidth, const int windowHeight);
+    
     /**
         * @brief Destroy GameManager
         *

@@ -4,16 +4,17 @@
 #include <utility>
 
 #include "../Entities/GameActor.h"
+#include "../GameAITypes.h"
 
 /**
     * @brief AI types for enemies
     *
     */
-enum class AIType : int
-{
-    Wandering,
-    Chasing
-};
+//enum class AIType : int
+//{
+//    Wandering,
+//    Chasing
+//};
 /**
     * @brief Enemy class
     *
@@ -91,7 +92,7 @@ class Enemy : public GameActor
     bool movingToCell = false; // is moving to cell
     std::pair<int, int> path;  // diff of cells to move
     // AI
-    AIType aiType = AIType::Wandering; // AI type
+    AIType aiType = AIType::wandering; // AI type
     // consts
     const float baseSpeed = 0.0018f;    // speed of enemy
     const float attackSpeed = 0.0025f;   // speed of attack enemy

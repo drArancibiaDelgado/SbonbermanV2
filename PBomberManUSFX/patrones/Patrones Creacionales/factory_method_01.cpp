@@ -27,25 +27,12 @@ public:
 	}
 
 	string color;
-	virtual void Mostrar() {};
+	virtual void Mostrar() = 0;
 	//virtual void Colorear() {};
 
 	/* This is the factory method. */
 	static Copa* getCopa(string color);
 };
-
-Copa* Copa::getCopa(std::string color)
-{
-	if (color == "rojo")
-		return new CopaRoja();
-	else if (color == "azul")
-		return new CopaAzul();
-	else
-		return nullptr;
-}
-
-
-
 
 class CopaRoja : public Copa
 {
@@ -56,6 +43,7 @@ public:
 	}
 	void Mostrar() { std::cout << "MOSTRAR COPA ROJA" << std::endl; }
 };
+
 
 class CopaAzul : public Copa
 {
@@ -68,6 +56,16 @@ public:
 	void Colorear() { std::cout << "COLOREANDO AZUL " << std::endl; }
 };
 
+
+Copa* Copa::getCopa(std::string color)
+{
+	if (color == "rojo")
+		return new CopaRoja();
+	else if (color == "azul")
+		return new CopaAzul();
+	else
+		return nullptr;
+}
 
 /* A little testing */
 int main()
@@ -82,7 +80,9 @@ int main()
 	cR->Mostrar();
 
 	std::cout << cA->color << std::endl;
+
 	((CopaAzul*)cA)->Colorear();
+	
 	cA->Mostrar();
 	
 	system("pause");

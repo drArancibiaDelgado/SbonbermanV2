@@ -142,20 +142,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Entities\ClasicoEnemy.cpp" />
+    <ClCompile Include="Entities\ClasicoPlayer.cpp" />
     <ClCompile Include="Core\Animation.cpp" />
+    <ClCompile Include="Entities\CartoonEnemy.cpp" />
+    <ClCompile Include="Entities\CartoonPlayer.cpp" />
     <ClCompile Include="Entities\Enemy.cpp" />
     <ClCompile Include="Entities\GameActor.cpp" />
     <ClCompile Include="Entities\GameGraphicObject.cpp" />
     <ClCompile Include="Entities\GameObject.cpp" />
     <ClCompile Include="Entities\Music.cpp" />
+    <ClCompile Include="Entities\PersonalizadoEnemy.cpp" />
+    <ClCompile Include="Entities\PersonalizadoPlayer.cpp" />
     <ClCompile Include="Entities\Player.cpp" />
+    <ClCompile Include="Entities\RealistaEnemy.cpp" />
+    <ClCompile Include="Entities\RealistaPlayer.cpp" />
     <ClCompile Include="Entities\Sound.cpp" />
     <ClCompile Include="Entities\Sprite.cpp" />
     <ClCompile Include="Entities\Text.cpp" />
+    <ClCompile Include="Factories\Factory.cpp" />
+    <ClCompile Include="Factories\FactoryGameCartoon.cpp" />
+    <ClCompile Include="Factories\FactoryGameClasico.cpp" />
+    <ClCompile Include="Factories\FactoryGamePersonalizado.cpp" />
+    <ClCompile Include="Factories\FactoryGameRealista.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Managers\AssetManager.cpp" />
     <ClCompile Include="Managers\SceneManager.cpp" />
+    <ClCompile Include="Entities\Muro.cpp" />
+    <ClCompile Include="Entities\MuroPiedra.cpp" />
     <ClCompile Include="Scenes\GameOverScene.cpp" />
     <ClCompile Include="Scenes\LevelScene.cpp" />
     <ClCompile Include="Scenes\MenuScene.cpp" />
@@ -165,20 +180,37 @@
     <ClCompile Include="Util\Pathfinding.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Entities\ClasicoEnemy.h" />
+    <ClInclude Include="Entities\ClasicoPlayer.h" />
     <ClInclude Include="Const.h" />
     <ClInclude Include="Core\Animation.h" />
+    <ClInclude Include="Entities\CartoonEnemy.h" />
+    <ClInclude Include="Entities\CartoonPlayer.h" />
     <ClInclude Include="Entities\Enemy.h" />
     <ClInclude Include="Entities\GameActor.h" />
     <ClInclude Include="Entities\GameGraphicObject.h" />
     <ClInclude Include="Entities\GameObject.h" />
     <ClInclude Include="Entities\Music.h" />
+    <ClInclude Include="Entities\PersonalizadoEnemy.h" />
+    <ClInclude Include="Entities\PersonalizadoPlayer.h" />
     <ClInclude Include="Entities\Player.h" />
+    <ClInclude Include="Entities\RealistaEnemy.h" />
+    <ClInclude Include="Entities\RealistaPlayer.h" />
     <ClInclude Include="Entities\Sound.h" />
     <ClInclude Include="Entities\Sprite.h" />
     <ClInclude Include="Entities\Text.h" />
+    <ClInclude Include="Factories\Factory.h" />
+    <ClInclude Include="Factories\FactoryGameCartoon.h" />
+    <ClInclude Include="Factories\FactoryGameClasico.h" />
+    <ClInclude Include="Factories\FactoryGamePersonalizado.h" />
+    <ClInclude Include="Factories\FactoryGameRealista.h" />
+    <ClInclude Include="GameAITypes.h" />
     <ClInclude Include="GameManager.h" />
+    <ClInclude Include="GameTextures.h" />
     <ClInclude Include="Managers\AssetManager.h" />
     <ClInclude Include="Managers\SceneManager.h" />
+    <ClInclude Include="Entities\Muro.h" />
+    <ClInclude Include="Entities\MuroPiedra.h" />
     <ClInclude Include="Scenes\GameOverScene.h" />
     <ClInclude Include="Scenes\LevelScene.h" />
     <ClInclude Include="Scenes\MenuScene.h" />

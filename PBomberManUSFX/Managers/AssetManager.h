@@ -8,26 +8,28 @@
 #include <string>
 #include <unordered_map>
 
+#include "../GameTextures.h"
 /**
     * @brief Enumeration for Texture
     *
     * @see getTexture
     */
-enum class Texture : int
-{
-    MenuBack,
-    Metal,
-    Stone,
-    Grass,
-    Brick,
-    Player,
-    Enemy1,
-    Enemy2,
-    Enemy3,
-    Bomb,
-    Explosion,
-    Door
-};
+//enum class Texture : int
+//{
+//    MenuBack,
+//    Metal,
+//    Stone,
+//    Grass,
+//    Brick,
+//    Player,
+//    Enemy1,
+//    Enemy2,
+//    Enemy3,
+//    Bomb,
+//    Explosion,
+//    Door
+//};
+
 /**
     * @brief Enumeration for Music
     *

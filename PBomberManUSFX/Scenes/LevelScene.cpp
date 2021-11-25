@@ -14,6 +14,16 @@
 LevelScene::LevelScene(GameManager* _gameManager, const unsigned int _stage, const unsigned int prevScore)
     : Scene(_gameManager), score(prevScore), stage(_stage)
 {
+    int factoryGameType = 1;
+
+    if (factoryGameType == 0) {
+        factory = new FactoryGameCartoon();
+    }
+    else if(factoryGameType == 1) {
+        factory = new FactoryGameClasico();
+    }
+    
+
     // common field parameters
     fieldPositionX = 0;
     fieldPositionY = gameManager->getWindowHeight() / 15;
@@ -174,21 +184,29 @@ void LevelScene::spawnStone(const int positionX, const int positionY)
 void LevelScene::spawnPlayer(const int positionX, const int positionY)
 {
     // spawn player
-    player = std::make_unique<Player>(gameManager->getAssetManager()->getTexture(Texture::Player),
-                                        gameManager->getRenderer());
-    player->setPosition(positionX, positionY);
+
+
+    //player = std::make_unique<Player>(gameManager->getAssetManager()->getTexture(Texture::Player), gameManager->getRenderer());
+    //player = std::make_unique<ClasicoPlayer>(gameManager->getAssetManager()->getTexture(Texture::Player), gameManager->getRenderer());
+    player = dynamic_pointer_cast<Player>(factory->CreatePlayer(positionX, positionY));
+
+    /*player->setPosition(positionX, positionY);
     player->setSize(scaledTileSize, scaledTileSize);
-    player->setClip(tileSize, tileSize, tileSize * 4, 0);
+    player->setClip(tileSize, tileSize, tileSize * 4, 0);*/
     addObject(player);
 }
 
 void LevelScene::spawnEnemy(Texture texture, AIType type, const int positionX, const int positionY)
 {
-    auto enemy =
-        std::make_shared<Enemy>(gameManager->getAssetManager()->getTexture(texture), gameManager->getRenderer());
-    enemy->setPosition(positionX, positionY);
-    enemy->setSize(scaledTileSize, scaledTileSize);
-    enemy->setAIType(type);
+    std::shared_ptr<Enemy> enemy;
+
+    enemy = dynamic_pointer_cast<Enemy>(factory->CreateEnemy(type, positionX, positionY));
+    
+    ////auto enemy = std::make_shared<Enemy>(gameManager->getAssetManager()->getTexture(texture), gameManager->getRenderer());
+    //auto enemy = std::make_shared<ClasicoEnemy>(gameManager->getAssetManager()->getTexture(texture), gameManager->getRenderer());
+    //enemy->setPosition(positionX, positionY);
+    //enemy->setSize(scaledTileSize, scaledTileSize);
+    //enemy->setAIType(type);
     addObject(enemy);
     enemies.push_back(enemy);
 }
@@ -223,7 +241,7 @@ void LevelScene::generateEnemies()
         int textureRand = randTexture();
         spawnEnemy(textureRand == 0 ? Texture::Enemy1 :
                                         (textureRand == 1 ? Texture::Enemy2 : Texture::Enemy3),
-                    randType() == 0 ? AIType::Wandering : AIType::Chasing,
+                    randType() == 0 ? AIType::wandering : AIType::chasing,
                     fieldPositionX + cellY * scaledTileSize, fieldPositionY + cellX * scaledTileSize);
     }
 }

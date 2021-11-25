@@ -1,5 +1,4 @@
-#ifndef _BOMBERMAN_ENTITIES_GameGraphicObject_H_
-#define _BOMBERMAN_ENTITIES_GameGraphicObject_H_
+#pragma once
 
 #include <SDL.h>
 #include <memory>
@@ -111,5 +110,3 @@ class GameGraphicObject: public GameObject
     private:
     bool isAttachedToCamera = true; // follow to camera
 };
-
-#endif // _BOMBERMAN_ENTITIES_GameGraphicObject_H_

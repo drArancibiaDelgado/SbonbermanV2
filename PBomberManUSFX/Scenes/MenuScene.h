@@ -1,5 +1,4 @@
-#ifndef _BOMBERMAN_SCENES_MENU_SCENE_H_
-#define _BOMBERMAN_SCENES_MENU_SCENE_H_
+#pragma once
 
 #include <SDL.h>
 #include <memory>
@@ -15,7 +14,10 @@
 enum class MenuItem
 {
     None,
-    Start,
+    StartCartoon,
+    StartClasic,
+    StartCustom,
+    StartRealistic,
     Exit,
     Last
 };
@@ -61,14 +63,19 @@ class MenuScene : public Scene
         */
     void onMenuItemPress();
 
-    std::shared_ptr<Text> startText = nullptr;      // menu start
+    //std::shared_ptr<Text> startText = nullptr;      // menu start
+    //Text* startText = nullptr; Es lo mismo que la linea anterior
+    
+    std::shared_ptr<Text> startCartoonText = nullptr;      // menu start cartoon
+    std::shared_ptr<Text> startClasicText = nullptr;      // menu start clasic
+    std::shared_ptr<Text> startCustomText = nullptr;      // menu start custom
+    std::shared_ptr<Text> startRealisticText = nullptr;      // menu start realistic
     std::shared_ptr<Text> exitText = nullptr;       // menu exit
     std::shared_ptr<Music> menuMusic = nullptr;     // menu music
-    MenuItem currentSelectedMenu = MenuItem::Start; // current selected menu
+    MenuItem currentSelectedMenu = MenuItem::StartCartoon; // current selected menu
 
     // const colors for menu selection
     const SDL_Color colorStandard = {255, 255, 255, 255};
     const SDL_Color colorPressed = {66, 134, 244, 255};
 };
 
-#endif // _BOMBERMAN_SCENES_MENU_SCENE_H_

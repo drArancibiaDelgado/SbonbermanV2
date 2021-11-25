@@ -59,8 +59,11 @@ class Player : public GameActor
     bool isMovingHorizontally() const;
 
     MovementDirection movementDirection = MovementDirection::None; // movement direction
-    const float speed = 0.004f;                                   // speed
+                                       // speed
     std::shared_ptr<Animation> movement;                           // movement animation
+
+protected:
+    float speed = 0.004f;
 };
 
 #endif // _BOMBERMAN_ENTITIES_PLAYER_H_
