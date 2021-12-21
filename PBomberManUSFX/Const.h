@@ -1,3 +1,5 @@
+//imprimir por pantalla el numero de enemigos que elimina bomberman en la parte inferior de la pantalla grafica.
+
 #ifndef _BOMBERMAN_CONST_H_
 #define _BOMBERMAN_CONST_H_
 /**
