@@ -18,7 +18,7 @@ Player::Player(std::shared_ptr<SDL_Texture> _texture, SDL_Renderer* _renderer)
     addAnimation(movement);
 
     keyboardInputp = KeyboardInput::Instance();
-    std::cout << keyboardInputp << std::endl;
+    //std::cout << keyboardInputp << std::endl;
 
 }
 

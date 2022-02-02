@@ -2,7 +2,7 @@
 
 #include <SDL.h>
 #include <vector>
-//uno de los primeros
+
 class TileGraph;
 
 class GameObjectPacman

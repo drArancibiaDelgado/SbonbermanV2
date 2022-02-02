@@ -6,7 +6,6 @@
 #include "../Entities/GameActor.h"
 #include "../GameAITypes.h"
 
-
 /**
     * @brief AI types for enemies
     *
@@ -22,15 +21,7 @@
     */
 class Enemy : public GameActor
 {
-protected:
-    int tempox10;
-    int velocidadpro;
     public:
-        //PrototypeNewEnemy(){};
-        virtual Enemy* clone() = 0;
-        int getVelocidadpro() { return velocidadpro; }
-        int getTempox10() { return tempox10; }
-
     /**
         * @brief Create Enemy
         *
@@ -110,52 +101,4 @@ protected:
     std::shared_ptr<Animation> movement; // movement animation
 };
 
-
-
-
 #endif // _BOMBERMAN_ENTITIES_ENEMY_H_
-
-
-class PrototypeNewEnemy : public Enemy
-{
-public:
-    PrototypeNewEnemy(int valor, int time)
-    {
-        velocidadpro = valor;
-        tempox10 = time; 
-    }
-
-    Enemy* clone()
-    {
-        return new PrototypeNewEnemy(*this);
-    }
-};
-
-class ObjectFactory
-{
-    static Enemy* velocidapro1;
-    static Enemy* tempox10_1;
-
-public:
-    static void  initialize()
-    {
-       // velocidapro1 = new PrototypeNewEnemy(1);
-        //tempox10_1 = new PrototypeNewEnemy(2);
-    }
-
-    static Enemy* getVelocidapro1()
-    {
-        return velocidapro1->clone();
-    }
-
-    static Enemy* getTempox10_1()
-    {
-        return tempox10_1->clone();
-    }
-
-};
-
-Enemy* ObjectFactory::velocidapro1 = 0;
-Enemy* ObjectFactory::tempox10_1 = 0;
-
-

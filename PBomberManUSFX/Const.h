@@ -1,5 +1,3 @@
-//imprimir por pantalla el numero de enemigos que elimina bomberman en la parte inferior de la pantalla grafica.
-
 #ifndef _BOMBERMAN_CONST_H_
 #define _BOMBERMAN_CONST_H_
 /**
@@ -10,6 +8,7 @@ enum class GameTile
 {
     Stone,
     Wall,
+    Item,
     Grass,
     Brick,
     EmptyGrass,
@@ -22,9 +21,14 @@ const int playerStartY = 1; // player start position Y on tilemap
 
 const unsigned int brickSpawnRandomize = 10; // less value => more bricks
 const unsigned int doorSpawnRandomize = 10;  // less value => door is far
+const unsigned int doorSpawnRandomizeItem = 10;
 const unsigned int bangSpawnCells = 5;       // bang spawn number of cells
-const unsigned int minEnemiesOnLevel = 2;    // minimum enemies count on level
-const unsigned int maxEnemiesOnLevel = 10;   // maximum enemies count on level
+
+//const unsigned int minEnemiesOnLevel = 2;    // minimum enemies count on level
+//const unsigned int maxEnemiesOnLevel = 10;   // maximum enemies count on level
+
+const unsigned int minItemsOnLevel = 5;    // minimum items count on level
+const unsigned int maxItemsOnLevel = 8;   // maximum items count on level
 const int bangSpawnPositions[bangSpawnCells][2] = {{0, 0},
                                                    {0, 1},
                                                    {1, 0},

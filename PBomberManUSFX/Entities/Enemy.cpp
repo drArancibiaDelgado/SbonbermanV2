@@ -141,5 +141,3 @@ void Enemy::generateNewPath()
         moveTo(randLeftRight * randLeftRightSign * getWidth(), 0);
     }
 }
-
-
