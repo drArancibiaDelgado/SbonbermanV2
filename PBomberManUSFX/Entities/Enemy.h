@@ -1,3 +1,4 @@
+//
 #ifndef _BOMBERMAN_ENTITIES_ENEMY_H_
 #define _BOMBERMAN_ENTITIES_ENEMY_H_
 
@@ -20,8 +21,13 @@
     *
     */
 class Enemy : public GameActor
-{
+{   
+protected:
+    Enemy nuv;
     public:
+        Enemy();
+        virtual Enemy* clone() = 0;
+
     /**
         * @brief Create Enemy
         *
@@ -100,5 +106,33 @@ class Enemy : public GameActor
     // animations
     std::shared_ptr<Animation> movement; // movement animation
 };
+
+
+class concreteEnemy:public Enemy
+{
+ 
+    concreteEnemy(std::shared_ptr<SDL_Texture> texture, SDL_Renderer* renderer);
+
+
+    concreteEnemy(Enemy nuevo)
+    {
+        nuv = nuevo;
+    }
+    Enemy* Clone() const {
+        return new concreteEnemy(*this);
+    }
+};
+
+
+
+class EnemyFactory
+{
+    private:
+
+
+public:
+
+};
+
 
 #endif // _BOMBERMAN_ENTITIES_ENEMY_H_

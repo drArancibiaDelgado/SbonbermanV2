@@ -27,7 +27,7 @@ class Player : public GameActor
     public:
 
         KeyboardInput* keyboardInputp;
-        float speed = 0.004f;
+        float speed = 0.009f;
 
     /**
         * @brief Create player

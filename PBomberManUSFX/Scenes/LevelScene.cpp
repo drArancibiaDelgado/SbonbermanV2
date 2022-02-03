@@ -451,7 +451,7 @@ void LevelScene::spawnPlayer(const int positionX, const int positionY)
         player->setSize(scaledTileSize, scaledTileSize);
         player->setClip(tileSize, tileSize, tileSize * 4, 0);
         addObject(player);
-        //player-> speed = 0.01f;
+        //player-> speed = 1f;
     }
 }
 
